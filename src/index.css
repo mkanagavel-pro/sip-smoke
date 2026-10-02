@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', serif;
+    --font-heading: 'Syne', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #07080a;
+    color: #e5e5e5;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: var(--font-display);
+  }
+
+  .font-modern-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Neon & Atmosphere glows */
+.neon-glow-lime {
+  filter: drop-shadow(0 0 8px rgba(163, 230, 53, 0.45)) drop-shadow(0 0 20px rgba(132, 204, 22, 0.25));
+}
+
+.neon-glow-gold {
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.45)) drop-shadow(0 0 20px rgba(217, 119, 6, 0.25));
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fef08a 0%, #d97706 50%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-lime-gradient {
+  background: linear-gradient(135deg, #ecfccb 0%, #a3e635 50%, #4d7c0f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f242d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #323b49;
+}
+
+/* Smoke drift animation */
+@keyframes smoke-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.25;
+  }
+}
+
+.animate-smoke {
+  animation: smoke-float 8s ease-in-out infinite;
+}
